@@ -130,6 +130,7 @@
     <Compile Include="AccountSystem.Designer.cs">
       <DependentUpon>AccountSystem.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductEntity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AccountSystem.resx">
