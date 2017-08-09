@@ -9,7 +9,7 @@ namespace AccountSystem {
     public class AccountContext : DbContext {
         public AccountContext() : base("DefaultDbSource") { }
 
-        public DbSet<AccountEntity> daily_account { get; set; }
-        public DbSet<ProductEntity> products { get; set; }
+        public DbSet<AccountsEntity> daily_account { get; set; }
+        public DbSet<ProductsEntity> products { get; set; }
     }
 }

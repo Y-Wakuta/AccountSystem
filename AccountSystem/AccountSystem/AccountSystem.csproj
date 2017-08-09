@@ -123,7 +123,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountContext.cs" />
+    <Compile Include="AccountDatahandler.cs" />
     <Compile Include="AccountEntity.cs" />
+    <Compile Include="AccountRoutine.cs" />
     <Compile Include="AccountSystem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +148,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\AccountEntity.datasource" />
+    <None Include="Properties\DataSources\ProductEntity.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

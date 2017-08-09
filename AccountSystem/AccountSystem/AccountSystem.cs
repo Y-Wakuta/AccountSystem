@@ -12,22 +12,13 @@ using System.Windows.Forms;
 
 namespace AccountSystem {
     public partial class AccountSystem : Form {
+
+        AccountDatahandler _adh;
+
         public AccountSystem() {
             InitializeComponent();
-            GetAccount();
-        }
-
-        public void GetAccount() {
-            using (var context = new AccountContext()) {
-                var dailyAccountList = context.daily_account.ToList();
-                var productsList = context.products.ToList();
-
-            }
-
-        }
-
-        private void splitter1_SplitterMoved(object sender, SplitterEventArgs e) {
-
+            _adh = new AccountDatahandler(productEntityBindingSource, accountEntityBindingSource);
+            _adh.GetAccount();
         }
     }
 }
