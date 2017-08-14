@@ -135,6 +135,13 @@
     <Compile Include="ProductEntity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchExpression.cs" />
+    <Compile Include="QueryBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QueryBox.Designer.cs">
+      <DependentUpon>QueryBox.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AccountSystem.resx">
       <DependentUpon>AccountSystem.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,8 +154,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="QueryBox.resx">
+      <DependentUpon>QueryBox.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\AccountEntity.datasource" />
+    <None Include="Properties\DataSources\AccountsEntity.datasource" />
     <None Include="Properties\DataSources\ProductEntity.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

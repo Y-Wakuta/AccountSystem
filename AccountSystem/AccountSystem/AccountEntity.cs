@@ -9,7 +9,7 @@ using System.ComponentModel;
 
 namespace AccountSystem {
     [Table("daily_account", Schema = "public")]
-    public class AccountsEntity : INotifyPropertyChanged {
+    public class AccountEntity : INotifyPropertyChanged {
         public int id {
             get { return _id; }
             set {

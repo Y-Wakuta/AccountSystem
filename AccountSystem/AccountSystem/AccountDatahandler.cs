@@ -9,7 +9,7 @@ using System.Windows.Forms;
 namespace AccountSystem {
     public class AccountDatahandler {
 
-        BindingList<AccountsEntity> _dailyAccountList;
+        BindingList<AccountEntity> _dailyAccountList;
         BindingList<ProductsEntity> _productsList;
         AccountContext accountContext = new AccountContext();
         BindingSource _pbs;
@@ -25,20 +25,21 @@ namespace AccountSystem {
         }
 
         private void currentAccountChanged() {
-            var cur = (AccountsEntity)_abs.Current;
+            var cur = (AccountEntity)_abs.Current;
             _pbs.Position = int.Parse(cur.additional_number1) - 1;
         }
 
         private void currentProductChanged() {
             var cur = (ProductsEntity)_pbs.Current;
-            ((AccountsEntity)_abs.Current).additional_number1 = cur.id.ToString();
+            ((AccountEntity)_abs.Current).additional_number1 = cur.id.ToString();
         }
 
         public void GetAccount() {
-            _dailyAccountList = new BindingList<AccountsEntity>(accountContext.daily_account.ToList());
+            _dailyAccountList = new BindingList<AccountEntity>(accountContext.daily_account.ToList());
             _productsList = new BindingList<ProductsEntity>(accountContext.products.ToList());
             _abs.DataSource = _dailyAccountList;
             _pbs.DataSource = _productsList;
+            
         }
     }
 }

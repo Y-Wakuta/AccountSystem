@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AccountSystem {
-    class SearchCombobox {
+    class SearchExpression {
+
     }
+
+
 }

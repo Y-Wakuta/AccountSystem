@@ -16,7 +16,7 @@ namespace AccountSystem {
             };
         }
 
-        static public Func<AccountContext, AccountsEntity> GetAccountById(int id) {
+        static public Func<AccountContext, AccountEntity> GetAccountById(int id) {
             return ctx => {
                 return ctx.daily_account
                     .Where(a => a.id == id)

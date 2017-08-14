@@ -20,5 +20,9 @@ namespace AccountSystem {
             _adh = new AccountDatahandler(productEntityBindingSource, accountEntityBindingSource);
             _adh.GetAccount();
         }
+
+        private void AccountSystem_Load(object sender, EventArgs e) {
+
+        }
     }
 }
