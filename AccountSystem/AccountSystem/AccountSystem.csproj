@@ -132,10 +132,11 @@
     <Compile Include="AccountSystem.Designer.cs">
       <DependentUpon>AccountSystem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Extensions.cs" />
     <Compile Include="ProductEntity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SearchExpression.cs" />
+    <Compile Include="QueryBoxItems.cs" />
     <Compile Include="QueryBox.cs">
       <SubType>UserControl</SubType>
     </Compile>

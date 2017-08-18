@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Filter = System.Linq.Expressions.Expression<System.Func<AccountSystem.AccountEntity, bool>>;
+
+
 
 namespace AccountSystem {
     public class AccountDatahandler {
@@ -39,7 +42,11 @@ namespace AccountSystem {
             _productsList = new BindingList<ProductsEntity>(accountContext.products.ToList());
             _abs.DataSource = _dailyAccountList;
             _pbs.DataSource = _productsList;
-            
+        }
+
+        public List<AccountEntity> GetAccountByFilter(Filter filter) {
+            "test"
+            return accountContext.daily_account.Where(filter).ToList();
         }
     }
 }

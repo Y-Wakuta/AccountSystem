@@ -51,7 +51,7 @@
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
-            this.queryBox1 = new AccountSystem.QueryBox();
+            this.queryBoxSearch = new QueryBox();
             this.buttonClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.accountEntityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productEntityBindingSource)).BeginInit();
@@ -60,7 +60,7 @@
             // 
             // accountEntityBindingSource
             // 
-            this.accountEntityBindingSource.DataSource = typeof(AccountSystem.AccountEntity);
+            this.accountEntityBindingSource.DataSource = typeof(AccountEntity);
             // 
             // splitter1
             // 
@@ -257,12 +257,13 @@
             // 
             // buttonSearch
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(662, 407);
+            this.buttonSearch.Location = new System.Drawing.Point(705, 407);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(176, 63);
             this.buttonSearch.TabIndex = 34;
             this.buttonSearch.Text = "検索";
             this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // buttonSave
             // 
@@ -273,16 +274,16 @@
             this.buttonSave.Text = "保存";
             this.buttonSave.UseVisualStyleBackColor = true;
             // 
-            // queryBox1
+            // queryBoxSearch
             // 
-            this.queryBox1.Location = new System.Drawing.Point(66, 415);
-            this.queryBox1.Name = "queryBox1";
-            this.queryBox1.Size = new System.Drawing.Size(543, 55);
-            this.queryBox1.TabIndex = 36;
+            this.queryBoxSearch.Location = new System.Drawing.Point(28, 415);
+            this.queryBoxSearch.Name = "queryBoxSearch";
+            this.queryBoxSearch.Size = new System.Drawing.Size(632, 55);
+            this.queryBoxSearch.TabIndex = 36;
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(855, 407);
+            this.buttonClear.Location = new System.Drawing.Point(896, 407);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(176, 63);
             this.buttonClear.TabIndex = 37;
@@ -295,7 +296,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1352, 914);
             this.Controls.Add(this.buttonClear);
-            this.Controls.Add(this.queryBox1);
+            this.Controls.Add(this.queryBoxSearch);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.accountDataGridView);
@@ -315,7 +316,6 @@
             this.Controls.Add(this.splitter1);
             this.Name = "AccountSystem";
             this.Text = "AccountSystem";
-            this.Load += new System.EventHandler(this.AccountSystem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.accountEntityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productEntityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountDataGridView)).EndInit();
@@ -352,7 +352,7 @@
         private System.Windows.Forms.Splitter splitter2;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Button buttonSave;
-        private AccountSystem.QueryBox queryBox1;
+        private QueryBox queryBoxSearch;
         private System.Windows.Forms.Button buttonClear;
     }
 }
