@@ -45,7 +45,6 @@ namespace AccountSystem {
         }
 
         public List<AccountEntity> GetAccountByFilter(Filter filter) {
-            "test"
             return accountContext.daily_account.Where(filter).ToList();
         }
     }
