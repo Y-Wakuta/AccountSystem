@@ -11,9 +11,6 @@ using System.Linq.Expressions;
 
 using Filter = System.Linq.Expressions.Expression<System.Func<AccountSystem.AccountEntity, bool>>;
 
-
-
-
 namespace AccountSystem {
     public partial class AccountSystem : Form {
 

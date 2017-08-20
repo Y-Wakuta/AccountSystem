@@ -17,7 +17,7 @@ namespace AccountSystem {
         }
 
         public void Initialize(IEnumerable<QueryBoxItemBase> items) {
-            var defaultItem = new QueryBoxItemBase() {
+            var defaultItem = new QueryBoxItem<object,object>() {
                 DisplayName = "未選択",
             };
             comboBoxSearch.setCombobox(defaultItem,items, "DisplayName");
