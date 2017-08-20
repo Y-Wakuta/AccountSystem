@@ -18,6 +18,7 @@ namespace AccountSystem {
         BindingSource _pbs;
         BindingSource _abs;
 
+
         public AccountDatahandler(BindingSource pbs, BindingSource abs) {
             _pbs = pbs;
             _abs = abs;
@@ -27,6 +28,8 @@ namespace AccountSystem {
             _pbs.CurrentItemChanged += (s, e) => currentProductChanged();
         }
 
+
+        #region event
         private void currentAccountChanged() {
             var cur = (AccountEntity)_abs.Current;
             _pbs.Position = int.Parse(cur.additional_number1) - 1;
@@ -36,7 +39,9 @@ namespace AccountSystem {
             var cur = (ProductsEntity)_pbs.Current;
             ((AccountEntity)_abs.Current).additional_number1 = cur.id.ToString();
         }
+        #endregion
 
+        #region get
         public void GetAccount() {
             _dailyAccountList = new BindingList<AccountEntity>(accountContext.daily_account.ToList());
             _productsList = new BindingList<ProductsEntity>(accountContext.products.ToList());
@@ -47,5 +52,13 @@ namespace AccountSystem {
         public List<AccountEntity> GetAccountByFilter(Filter filter) {
             return accountContext.daily_account.Where(filter).ToList();
         }
+        #endregion
+
+        #region set
+        public void RebindDGV(List<AccountEntity> accountList) {
+            _dailyAccountList = new BindingList<AccountEntity>(accountList);
+            _abs.DataSource = _dailyAccountList;
+        }
+        #endregion
     }
 }

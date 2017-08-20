@@ -16,8 +16,11 @@ namespace AccountSystem {
             InitializeComponent();
         }
 
-        public void Initialize(IEnumerable<QueryBoxItemBase> ienum) {
-            comboBoxSearch.setCombobox(ienum, "DisplayName");
+        public void Initialize(IEnumerable<QueryBoxItemBase> items) {
+            var defaultItem = new QueryBoxItemBase() {
+                DisplayName = "未選択",
+            };
+            comboBoxSearch.setCombobox(defaultItem,items, "DisplayName");
         }
 
         public IOption<Expression<Func<T, bool>>> FilterOpt<T>() {
@@ -28,10 +31,10 @@ namespace AccountSystem {
                 var type = comboBoxSearch.SelectedItem.GetType().GetGenericArguments()[1];
                 var validated = ((QueryBoxItemBase)(comboBoxSearch.SelectedItem)).validate(textBoxSearch.Text);
                 if (type == typeof(int)) {
-                   var filter = ((QueryBoxItem<T, int>)(comboBoxSearch.SelectedItem))
-                          .FilterBaseOpt
-                          .Select(q => q(validated.To<int>()))
-                          .ToOption();
+                    var filter = ((QueryBoxItem<T, int>)(comboBoxSearch.SelectedItem))
+                           .FilterBaseOpt
+                           .Select(q => q(validated.To<int>()))
+                           .ToOption();
                     return filter;
                 }
                 else if (type == typeof(string)) {
@@ -150,10 +153,10 @@ static public class Extensions {
         return result;
     }
 
-    public static void setCombobox<T>(this ComboBox comb, IEnumerable<T> list, string displayMem) {
+    public static void setCombobox<T>(this ComboBox comb, T Default,IEnumerable<T> list, string displayMem) {
         comb.Items.Clear();
         comb.Enabled = true;
-
+        comb.Items.Add(Default);
         foreach (var i in list) {
             comb.Items.Add(i);
         }

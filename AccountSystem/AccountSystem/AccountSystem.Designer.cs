@@ -51,8 +51,9 @@
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
-            this.queryBoxSearch = new QueryBox();
+            this.queryBoxSearch1 = new QueryBox();
             this.buttonClear = new System.Windows.Forms.Button();
+            this.queryBoxSearch2 = new QueryBox();
             ((System.ComponentModel.ISupportInitialize)(this.accountEntityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productEntityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountDataGridView)).BeginInit();
@@ -67,7 +68,7 @@
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(1352, 379);
+            this.splitter1.Size = new System.Drawing.Size(1476, 379);
             this.splitter1.TabIndex = 19;
             this.splitter1.TabStop = false;
             // 
@@ -195,7 +196,7 @@
             this.accountDataGridView.Location = new System.Drawing.Point(0, 512);
             this.accountDataGridView.Name = "accountDataGridView";
             this.accountDataGridView.RowTemplate.Height = 30;
-            this.accountDataGridView.Size = new System.Drawing.Size(1352, 402);
+            this.accountDataGridView.Size = new System.Drawing.Size(1476, 624);
             this.accountDataGridView.TabIndex = 33;
             // 
             // idDataGridViewTextBoxColumn
@@ -251,7 +252,7 @@
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter2.Location = new System.Drawing.Point(0, 379);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(1352, 133);
+            this.splitter2.Size = new System.Drawing.Size(1476, 133);
             this.splitter2.TabIndex = 32;
             this.splitter2.TabStop = false;
             // 
@@ -274,12 +275,12 @@
             this.buttonSave.Text = "保存";
             this.buttonSave.UseVisualStyleBackColor = true;
             // 
-            // queryBoxSearch
+            // queryBoxSearch1
             // 
-            this.queryBoxSearch.Location = new System.Drawing.Point(28, 415);
-            this.queryBoxSearch.Name = "queryBoxSearch";
-            this.queryBoxSearch.Size = new System.Drawing.Size(632, 55);
-            this.queryBoxSearch.TabIndex = 36;
+            this.queryBoxSearch1.Location = new System.Drawing.Point(28, 396);
+            this.queryBoxSearch1.Name = "queryBoxSearch1";
+            this.queryBoxSearch1.Size = new System.Drawing.Size(632, 55);
+            this.queryBoxSearch1.TabIndex = 36;
             // 
             // buttonClear
             // 
@@ -289,14 +290,23 @@
             this.buttonClear.TabIndex = 37;
             this.buttonClear.Text = "クリア";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
+            // queryBoxSearch2
+            // 
+            this.queryBoxSearch2.Location = new System.Drawing.Point(28, 451);
+            this.queryBoxSearch2.Name = "queryBoxSearch2";
+            this.queryBoxSearch2.Size = new System.Drawing.Size(632, 55);
+            this.queryBoxSearch2.TabIndex = 38;
             // 
             // AccountSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1352, 914);
+            this.ClientSize = new System.Drawing.Size(1476, 1136);
+            this.Controls.Add(this.queryBoxSearch2);
             this.Controls.Add(this.buttonClear);
-            this.Controls.Add(this.queryBoxSearch);
+            this.Controls.Add(this.queryBoxSearch1);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.accountDataGridView);
@@ -352,8 +362,9 @@
         private System.Windows.Forms.Splitter splitter2;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Button buttonSave;
-        private QueryBox queryBoxSearch;
+        private QueryBox queryBoxSearch1;
         private System.Windows.Forms.Button buttonClear;
+        private QueryBox queryBoxSearch2;
     }
 }
 
