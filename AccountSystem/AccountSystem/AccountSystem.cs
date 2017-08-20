@@ -31,11 +31,9 @@ namespace AccountSystem {
         }
 
         private Filter MakeFilter() {
-            //Filter filter = a => true;
-            //queryBoxSearch.FilterOpt<AccountEntity>().ForEach(f => filter = filter.And(f));
-           return queryBoxSearch.FilterOpt<AccountEntity>().First(f=>f!=null);
-
-            //return filter;
+            Filter filter = a => true;
+            queryBoxSearch.FilterOpt<AccountEntity>().ForEach(f => filter = filter.And(f));
+            return filter;
         }
     }
 }
